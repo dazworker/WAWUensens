@@ -1,0 +1,9 @@
+h1{font-size: 22px; text-align: center;}
+h2{font-size: 16px;}
+
+
+#text{float: left;width: 50%;margin-left: 20px;text-align: justify;}
+/*#text{margin-left: 20px;text-align: justify;}*/
+#bild1{float:right;margin-top: 20px;margin-left: 20px}
+#bild2{margin-left: 20px}
+#bild2container{clear: both;}
