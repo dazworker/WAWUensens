@@ -1,0 +1,14 @@
+h1{font-size: 20px;}
+h2{font-size: 14px;}
+h3{font-size: 12px;}
+a{font-size: 16px;}
+
+#anmeldeformular{font-size: 12px;float: left;margin-left: 20px;margin-top: 20px;}
+.formulareingabe{position: absolute;left: 150px;margin-left: 20px}
+#messeinfos{text-align: center; }
+
+
+
+
+/*#anmeldeformular{font-size: 12px;float: left;margin-left: 20px;margin-top: 20px}
+#messeinfos{text-align: center; float: right;margin-right: 20px}*/
