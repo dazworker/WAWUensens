@@ -1,22 +1,93 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html> 
-<head> 
- <meta http-equiv="Content-Type" 
- content="text/html; charset=UTF-8"> 
- <title>1211356, 1212195, 1228349</title> 
-</head> 
-<body> 
-<h1>UENSENS</h1>
-<h2>Text</h2>
-<p>
-<b>Lorem</b> ipsum dolor sit amet, <i>consectetur</i> adipiscing elit. Etiam eget leo urna. Cras non sapien vitae urna sagittis euismod. Nulla quis dolor non purus pharetra varius. Fusce in leo aliquet, convallis augue interdum, semper leo. Proin ultricies, nisi eget porttitor ornare, purus arcu dictum purus, nec luctus est felis a sem. Donec euismod elit in convallis aliquet. Fusce magna mi, tristique vel purus sit amet, aliquet volutpat arcu. Vivamus volutpat lorem ac ipsum dignissim, sed mollis eros sodales. Fusce blandit luctus metus, at pharetra nunc ultrices et. Duis congue leo at augue euismod, vitae sollicitudin sapien laoreet. In hac habitasse platea dictumst. Integer egestas, tortor at fringilla ultricies, arcu felis egestas est, eu ultrices neque ligula sit amet orci. Donec accumsan, erat in fermentum varius, orci diam bibendum massa, eu aliquam neque enim ac justo. Aenean tincidunt quam et ipsum auctor varius. Suspendisse at vehicula mi. Integer tristique neque posuere auctor placerat.
-</p>
-<p>
-<i>Maecenas</i> fermentum gravida est eget <b>lacinia</b>. Aenean felis ante, interdum ullamcorper libero eget, porta commodo mauris. Nunc eget eros sapien. Integer commodo nisl porta magna tristique sodales. Aenean sit amet sapien non arcu aliquam adipiscing. Nullam libero orci, semper id turpis eget, congue convallis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam ullamcorper ullamcorper ligula at pharetra. Duis tincidunt nibh purus, in ullamcorper felis sagittis congue. Cras ullamcorper sem nec commodo accumsan.
-</p>
-<h3>Namen + Geburtstage</h3>
-<ol><li>Alexander Kirilyuk 31.05.1992</li>
-<li>Michele Biscotti 16.04.1989</li>
-<li>Thomas Welter  06.03.1988</li></ol>
-</body> 
-</html> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="de">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Meine erste Seite</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+<h1>Anmeldung</h1>
+<h2>Hier könnt ihr euch für eine Messe eurer Wahl anmelden</h2>
+<br>
+<form id="formular" action="http://martinakraus.net/hsmannheim.php"
+      method="GET" accept-charset="utf-8">
+    <table border="0" cellpadding="0" cellspacing="20">
+        <tr>
+            <td align="left">Vorname</td>
+            <td><input type="text" size="30" maxlength="40" value="Vorname" name="vorname"></td>
+        </tr>
+        <tr>
+            <td align="left">Name</td>
+            <td><input type="text" size="30" maxlength="40" value="Name" name="name"></td>
+        </tr>
+        <tr>
+            <td align="left">Email</td>
+            <td><input type="text" size="30" maxlength="40" value="email" name="email"></td>
+        </tr>
+        <tr>
+            <td align="left">MatrikelNr</td>
+            <td><input type="text" size="30" maxlength="40" value="matrikelnr" name="matrikelnr"></td>
+        </tr>
+        <tr>
+            <td align="left">Studiengang</td>
+            <td>
+                <select name="studiengang" size="1">
+                    <option value="uib">UIB</option>
+                    <option value="ib" selected="selected">IB</option>
+                    <option value="orange">IMB</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">Messe</td>
+            <td>
+                <input type="radio" name="messe"
+                       value="cebit" checked="checked">
+                CeBIT
+                <br>
+                <input type="radio" name="messe"
+                       value="conit">
+                ConIT
+                <br>
+                <input type="radio" name="messe"
+                       value="webtechcon">
+                WebTechCon
+            </td>
+        </tr>
+        <tr>
+            <td align="left">Handynr</td>
+            <td><input type="text" size="30" maxlength="40" value="Handynr" name="handy"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" name="Start" value="Submit">
+                    Uebertragen
+                </button>
+            </td>
+        </tr>
+
+
+    </table>
+</form>
+
+<div id="messeinfos">
+
+    <h2>Infos fuer Messen</h2>
+    <h3>Unter den Links gibts Infos fuer die Messen</h3>
+
+    <a href="Cebit.html">CeBIT</a><br>
+    <a href="Webtechcon.html">WebTech Conference</a><br>
+    <a href="Conhit.html">conhIT</a><br>
+
+</div>
+
+
+
+</body>
+
+
+</html>
