@@ -1,0 +1,62 @@
+var contributors ={
+	cebit: {
+		teilnehmer1:{
+			name : "Ent",
+			vorname : "Thilo",
+			studiengang : "IB",
+			email : "tDOTentATgmailDOTde",
+		},
+		teilnehmer2:{
+			name : "Kraus",
+			vorname : "Matrina",
+			studiengang : "IB",
+			email : "m.krausAThs-mannheimDOTde",
+		},
+		teilnehmer3:{
+			name : "Smits",
+			vorname : "Thomas",
+			studiengang : "UIB",
+			email : "tDOTsmitsAThs-mannheimDOTde",
+		},
+		teilnehmer4:{
+			name : "Groeschel",
+			vorname : "Michael",
+			studiengang : "UIB",
+			email : "mDOTgroeschelAThs-mannheimDOTde",
+		},
+	},
+	conhit:{
+		teilnehmer1:{
+			name : "Schmuecker",
+			vorname : "Paul",
+			studiengang : "IMB",
+			email : "pDOTschmueckerAThs-mannheimDOTde",
+		},
+		teilnehmer2:{
+			name : "Felsenheimer",
+			vorname : "Jan",
+			studiengang : "IB",
+			email : "jDOTfelsenheimerATdiebestebaendderweltDOTde",
+		},
+	},
+	webtechcon:{
+		teilnehmer1:{
+			name : "Spies",
+			vorname : "Marcell",
+			studiengang : "IB",
+			email : "mDOTSpiesATgmailDOTde",
+		},
+		teilnehmer2:{
+			name : "Hoppe",
+			vorname : "Johannes",
+			studiengang : "UIB",
+			email : "jDOThoppeATgmxDOTde",
+		},
+		teilnehmer3:{
+			name : "Hofmeister",
+			vorname : "Johannes",
+			studiengang : "UIB",
+			email : "cessorATgmailDOTde",
+		},
+	}
+}

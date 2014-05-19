@@ -1,0 +1,5 @@
+var fairsdata = {
+	Cebit : 15,
+	ConHit : 50,
+	WebTechCon : 300,
+};
