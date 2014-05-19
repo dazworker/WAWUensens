@@ -1,0 +1,48 @@
+h1{text-align: center; font-size:30px}
+#menue{width:50%}
+#cebit
+{
+position : relative;
+text-align:center;
+width: 50%;  
+top: 15%;
+align: center
+}
+#webtechcon
+{
+position : relative;
+text-align:center;
+width: 50%;  
+top: 15%;
+align: center
+}
+#conhit
+{
+position : relative;
+text-align:center;
+width: 50%;  
+top: 15%;
+align: center
+}
+#messen{
+text-align:center;
+width: 50%;  
+top: 15%;
+left: 25%;
+}
+#messen2{
+text-align:center;
+width: 50%;  
+top: 15%;
+left: 25%;
+}
+#fairs{
+position : relative;
+text-align:center;
+width: 25%;  
+top: 15%;
+left: 37.5%;
+}
+
+#back{
+}
