@@ -1,75 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <meta http-equiv="Content-Type"
-          content="text/html; charset=UTF-8">
-    <title>Messe</title>
-    <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-</head>
-<body>
-    
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+<head> 
+ <meta http-equiv="Content-Type" 
+ content="text/html; charset=UTF-8"> 
+ <title>Messe</title> 
+ <link rel="stylesheet" type="text/css" href="css/global.css">
+ <link rel="stylesheet" type="text/css" href="css/index.css">
+</head> 
+<body> 
+
 <div id="team">
-    Team Uensens
+Team Uensens
 </div>
 
 <h1>Messeanmeldung</h1>
-
 <h3>Dies ist unsere Messeanmeldung</h3>
 
-<form id="anmeldeformular" action="http://martinakraus.net/hsmannheim.php
-" method="get">
+    <form id="anmeldeformular" action="http://martinakraus.net/hsmannheim.php" method="get">
+        Vorname
+        <input class="formulareingabe" type="text" name="vorname">
+        <br><br>
+        Name
+        <input class="formulareingabe" type="text" name="name">
+        <br><br>
+        E-Mail
+        <input class="formulareingabe" type="text" name="email">
+        <br><br>
+        Matrikelnummer
+        <input class="formulareingabe" type="text" name="matrikelnr">
+        <br><br>
+        Handynummer
+        <input class="formulareingabe" type="text" name="handy">
+        <br><br>
+        Studiengang
+        <select class="formulareingabe" name="studiengang">
+            <option value="UIB">UIB</option>
+            <option value="IB" selected="selected">IB</option>
+            <option value="IMB">IMB</option>
+        </select>
+        <br><br>
 
-    Vorname
-    <input class="formulareingabe" type="text" name="vorname">
-    <br><br>
+        Messe
+        <span class="formulareingabe"><input type="radio" name="messe" checked="checked" value="CeBIT">CeBIT</span><br><br>
+        <span class="formulareingabe"><input type="radio" name="messe" value="conhIT">conhIT</span><br><br>
+        <span class="formulareingabe"><input type="radio" name="messe" value="WebTech Con">WebTech Con</span><br><br>
 
-    Name
-    <input class="formulareingabe" type="text" name="name">
-    <br><br>
-
-    E-Mail
-    <input class="formulareingabe" type="text" name="email">
-    <br><br>
-
-    Matrikelnummer
-    <input class="formulareingabe" type="text" name="matrikelnr">
-    <br><br>
-
-    Handynummer
-    <input class="formulareingabe" type="text" name="handy">
-    <br><br>
-
-    Studiengang
-    <select class="formulareingabe" name="studiengang">
-        <option value="UIB">UIB</option>
-        <option value="IB" selected="selected">IB</option>
-        <option value="IMB">IMB</option>
-    </select>
-    <br><br>
-
-
-    Messe
-    <span class="formulareingabe"><input type="radio" name="messe" checked="checked" value="CeBIT">CeBIT</span><br><br>
-    <span class="formulareingabe"><input type="radio" name="messe" value="conhIT">conhIT</span><br><br>
-    <span class="formulareingabe"><input type="radio" name="messe" value="WebTech Con">WebTech Con</span><br><br>
-
-
-    <input type="submit" name="submit" value="Senden">
-
-</form>
+        <input type="submit" name="submit" value="Senden">
+    </form>
 
 <div id="messeinfos">
 
-    <h2>Infos für Messen</h2>
+<h2>Infos für Messen</h2>
+<h3>Unter den Links gibts Infos für die Messen</h3>
 
-    <h3>Unter den Links gibts Infos für die Messen</h3>
+<a href="Cebit.html">CeBIT</a><br>
+<a href="Webtechcon.html">WebTech Conference</a><br>
+<a href="Conhit.html">conhIT</a><br>
 
-    <a href="Cebit.html">CeBIT</a><br>
-    <a href="Webtechcon.html">WebTech Conference</a><br>
-    <a href="Conhit.html">conhIT</a><br>
+<h2>Details ihrer Anmeldung</h2>
 
+    <a href="detail.html">Details</a>
 </div>
 
-</body>
+</body> 
 </html> 
