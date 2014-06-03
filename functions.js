@@ -206,6 +206,9 @@ function checkForm(){
     var matrikelNr = document.getElementById("matrikelnummer");
     var handy = document.getElementById("handy");
 
+    //für name: /^[A-Za-zäöüÄÖÜß]+$/
+    //für mail: /^[^@]+@[^@]+\.(de|org|net|com|fm)$/
+
     if(!/^\d+$/.test(matrikelNr.value)){
         falscheEingabe = true;
         matrikelNrFalsch = true;
