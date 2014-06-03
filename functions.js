@@ -184,15 +184,42 @@ function webtechcon() {
 //funktion um die Auswahl zu Markieren
 function select(id, colour) {
     document.getElementById(id).style.backgroundColor = colour;
-};
+}
 
 //funktion um die Auswahl zu demarkieren
 function unselect(id) {
     document.getElementById(id).style.backgroundColor = window.document.bgColor;
-};
+}
 
 //funktion zum Entfernen von Elementen
 function remove(id) {
     node = document.getElementById(id);
     node.parentNode.removeChild(node);
+}
+
+
+function checkForm(){
+    var falscheEingabe = false;
+    var matrikelNrFalsch = false;
+    var handyFalsch = false;
+
+    var matrikelNr = document.getElementById("matrikelnummer");
+    var handy = document.getElementById("handy");
+
+    if(!/^\d+$/.test(matrikelNr.value)){
+        falscheEingabe = true;
+        matrikelNrFalsch = true;
+    }
+
+    if(!/^0\d+$/.test(handy.value)){
+        falscheEingabe = true;
+        handyFalsch = true;
+    }
+
+    if(falscheEingabe){
+        alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie Ihre Eingaben");
+
+        return false;
+    }
+
 }
