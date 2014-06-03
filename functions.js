@@ -197,27 +197,67 @@ function remove(id) {
     node.parentNode.removeChild(node);
 }
 
-
+//Anmeldeformular auf ungültige Eingaben prüfen
 function checkForm(){
     var falscheEingabe = false;
-    var matrikelNrFalsch = false;
-    var handyFalsch = false;
 
     var matrikelNr = document.getElementById("matrikelnummer");
     var handy = document.getElementById("handy");
+    var vorname = document.getElementById("vorname");
+    var nachname = document.getElementById("nachname");
+    var email = document.getElementById("email");
 
-    //für name: /^[A-Za-zäöüÄÖÜß]+$/
-    //für mail: /^[^@]+@[^@]+\.(de|org|net|com|fm)$/
 
-    if(!/^\d+$/.test(matrikelNr.value)){
-        falscheEingabe = true;
-        matrikelNrFalsch = true;
-    }
-
+    //Handynummer prüfen
     if(!/^0\d+$/.test(handy.value)){
         falscheEingabe = true;
-        handyFalsch = true;
+        handy.focus();
+        handy.style.borderStyle = "solid";
+        handy.style.borderColor = "red";
+    }else{
+        handy.style.borderStyle = "none";   //bei erneuter Prüfung wieder ausblenden wenn korrekt
     }
+
+    //Matrikelnummer prüfen
+    if(!/^\d+$/.test(matrikelNr.value)){
+        falscheEingabe = true;
+        matrikelNr.focus();
+        matrikelNr.style.borderStyle = "solid";
+        matrikelNr.style.borderColor = "red";
+    }else{
+        matrikelNr.style.borderStyle = "none";
+    }
+
+    //email prüfen
+    if(!/^[^@]+@[^@]+\.(de|org|net|com|fm)$/.test(email.value)){
+        falscheEingabe = true;
+        email.focus();
+        email.style.borderStyle = "solid";
+        email.style.borderColor = "red";
+    }else{
+        email.style.borderStyle = "none";
+    }
+
+    //Nachname prüfen
+    if(!/^[A-Za-zäöüÄÖÜß]+$/.test(nachname.value)){
+        falscheEingabe = true;
+        nachname.focus();
+        nachname.style.borderStyle = "solid";
+        nachname.style.borderColor = "red";
+    }else{
+        nachname.style.borderStyle = "none";
+    }
+
+    //Vorname prüfen
+    if(!/^[A-Za-zäöüÄÖÜß]+$/.test(vorname.value)){
+        falscheEingabe = true;
+        vorname.focus();
+        vorname.style.borderStyle = "solid";
+        vorname.style.borderColor = "red";
+    }else{
+        vorname.style.borderStyle = "none";
+    }
+
 
     if(falscheEingabe){
         alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie Ihre Eingaben");
