@@ -262,6 +262,8 @@ function checkForm(){
     if(falscheEingabe){
         alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie Ihre Eingaben");
 
+        return false;
+
 
     }
 
