@@ -1,4 +1,41 @@
 ﻿//function zum erzeugen derTabelle
+var contributors;
+var fairsdata;
+
+function sendRequestC() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        //Wenn der Request ankam und ok (200) war dann tue folgendes:
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            contributors = JSON.parse(xmlhttp.responseText);
+            document.getElementById("fairs").style.visibility = "hidden";
+            select('member', '#4169E1');
+            unselect('infos');
+            //zeige Messen Auswahl
+            document.getElementById("messen").style.visibility = "visible";
+        }
+    }
+    //Hier wird angegeben welche HTTP-Methode und an welche PHP-Datei der Request gesendet wird
+    xmlhttp.open("GET", "getDetails.php?data=contributors");
+    xmlhttp.send();
+}
+function sendRequestF() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        //Wenn der Request ankam und ok (200) war dann tue folgendes:
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            fairsdata = JSON.parse(xmlhttp.responseText);
+            startFairs();
+            activeElemID = "fairs";
+            select("infos", '#4169E1');
+            document.getElementById("messen").style.visibility = "hidden";
+        }
+    }
+    //Hier wird angegeben welche HTTP-Methode und an welche PHP-Datei der Request gesendet wird
+    xmlhttp.open("GET", "getDetails.php?data=fairs");
+    xmlhttp.send();
+}
+
 function startContributor(messe) {
     node = document.getElementById("content");
     node.appendChild(createContributors(contributors,messe));
@@ -70,12 +107,11 @@ function replaceEmail(string) {
 //Initialisierung der Kosten Tabelle
 function startFairs() {
     node = document.getElementById("content");
-    node.appendChild(createFairs(fairsdata, "fairs"));
+    node.appendChild(createFairs(fairsdata));
 }
 
-
 //funktion zum erzeugen der KostenTabelle
-function createFairs(fairsdata, id) {
+function createFairs(fairsdata) {
     var Table = document.createElement("table");
     var tablebody = document.createElement("tbody");
 
@@ -104,7 +140,7 @@ function createFairs(fairsdata, id) {
     }
     //einstellungen
     Table.appendChild(tablebody);
-    Table.setAttribute("ID", id);
+    Table.setAttribute("ID", 'fairs');
     Table.setAttribute("border", 1);
     Table.setAttribute("cellpadding", 5);
     Table.setAttribute("cellspacing", 0);
@@ -115,15 +151,13 @@ function createFairs(fairsdata, id) {
 
 }
 
+
 //variable zur abspeicherung des activen Elements
 var activeElemID;
 
-//Initialierung aller Elemente beim Start
+
 function start() {
-    startFairs();
-    activeElemID = "fairs";
-    select("infos", '#4169E1');
-    document.getElementById("messen").style.visibility = "hidden";
+    sendRequestF();
 }
 
 //Anzeigen der Kosten
@@ -141,12 +175,7 @@ function fairs() {
 
 //Anzeigen des Menüs für die Auswahl der Messe
 function member() {
-    document.getElementById("fairs").style.visibility = "hidden";
-    select('member', '#4169E1');
-    unselect('infos');
-    //zeige Messen Auswahl
-    document.getElementById("messen").style.visibility = "visible";
-
+    sendRequestC();
 }
 
 
@@ -184,87 +213,15 @@ function webtechcon() {
 //funktion um die Auswahl zu Markieren
 function select(id, colour) {
     document.getElementById(id).style.backgroundColor = colour;
-}
+};
 
 //funktion um die Auswahl zu demarkieren
 function unselect(id) {
     document.getElementById(id).style.backgroundColor = window.document.bgColor;
-}
+};
 
 //funktion zum Entfernen von Elementen
 function remove(id) {
-    node = document.getElementById(id);
-    node.parentNode.removeChild(node);
-}
-
-//Anmeldeformular auf ungültige Eingaben prüfen
-function checkForm(){
-    var falscheEingabe = false;
-
-    var matrikelNr = document.getElementById("matrikelnummer");
-    var handy = document.getElementById("handy");
-    var vorname = document.getElementById("vorname");
-    var nachname = document.getElementById("nachname");
-    var email = document.getElementById("email");
-
-
-    //Handynummer prüfen
-    if(!/^0\d+$/.test(handy.value)){
-        falscheEingabe = true;
-        handy.focus();
-        handy.style.borderStyle = "solid";
-        handy.style.borderColor = "red";
-    }else{
-        handy.style.borderStyle = "none";   //bei erneuter Prüfung wieder ausblenden wenn korrekt
-    }
-
-    //Matrikelnummer prüfen
-    if(!/^\d+$/.test(matrikelNr.value)){
-        falscheEingabe = true;
-        matrikelNr.focus();
-        matrikelNr.style.borderStyle = "solid";
-        matrikelNr.style.borderColor = "red";
-    }else{
-        matrikelNr.style.borderStyle = "none";
-    }
-
-    //email prüfen
-    if(!/^[^@]+@[^@]+\.(de|org|net|com|fm)$/.test(email.value)){
-        falscheEingabe = true;
-        email.focus();
-        email.style.borderStyle = "solid";
-        email.style.borderColor = "red";
-    }else{
-        email.style.borderStyle = "none";
-    }
-
-    //Nachname prüfen
-    if(!/^[A-Za-zäöüÄÖÜß]+$/.test(nachname.value)){
-        falscheEingabe = true;
-        nachname.focus();
-        nachname.style.borderStyle = "solid";
-        nachname.style.borderColor = "red";
-    }else{
-        nachname.style.borderStyle = "none";
-    }
-
-    //Vorname prüfen
-    if(!/^[A-Za-zäöüÄÖÜß]+$/.test(vorname.value)){
-        falscheEingabe = true;
-        vorname.focus();
-        vorname.style.borderStyle = "solid";
-        vorname.style.borderColor = "red";
-    }else{
-        vorname.style.borderStyle = "none";
-    }
-
-
-    if(falscheEingabe){
-        alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie Ihre Eingaben");
-
-        return false;
-
-
-    }
-
+        node = document.getElementById(id).parentNode;
+        node.removeChild(document.getElementById(id));
 }
